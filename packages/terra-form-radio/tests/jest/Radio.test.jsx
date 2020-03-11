@@ -33,6 +33,12 @@ it('should render a radio with a hidden label', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+it('should render a radio with a label on top of the radio button', () => {
+  const checkBox = (<Radio checked onChange={() => {}} labelText="Radio" isLabelTop />);
+  const wrapper = shallow(checkBox);
+  expect(wrapper).toMatchSnapshot();
+});
+
 it('should render a ChoiceField with a radio', () => {
   const choiceField = (
     <Radio

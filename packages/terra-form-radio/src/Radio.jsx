@@ -37,6 +37,10 @@ const propTypes = {
     */
   isLabelHidden: PropTypes.bool,
   /**
+    * Whether the label is on top of the radio button.
+    */
+  isLabelTop: PropTypes.bool,
+  /**
     * Text of the label.
     */
   labelText: PropTypes.node.isRequired,
@@ -75,6 +79,7 @@ const defaultProps = {
   disabled: false,
   isInline: false,
   isLabelHidden: false,
+  isLabelTop: false,
   labelTextAttrs: {},
   name: null,
   onBlur: undefined,
@@ -91,6 +96,7 @@ const Radio = ({
   disabled,
   isInline,
   isLabelHidden,
+  isLabelTop,
   labelText,
   labelTextAttrs,
   name,
@@ -131,6 +137,10 @@ const Radio = ({
     'label-text',
   ]);
 
+  const labelTextTopClasses = cx([
+    'label-text-top',
+  ]);
+
   const outerRingClasses = cx([
     'outer-ring',
     { 'is-mobile': RadioUtil.isConsideredMobileDevice() },
@@ -141,16 +151,25 @@ const Radio = ({
   ]);
 
   let labelTextContainer = null;
+  let labelTextTopContainer = null;
   if (isLabelHidden) {
+    controlInputAttrs['aria-label'] = labelText;
+    labelTextTopContainer = <span {...labelTextAttrs} className={labelTextTopClasses} />;
+    labelTextContainer = <span {...labelTextAttrs} className={labelTextClasses} />;
+  } else if (isLabelTop) {
+    labelTextTopContainer = <span {...labelTextAttrs} className={labelTextTopClasses}>{labelText}</span>;
     controlInputAttrs['aria-label'] = labelText;
     labelTextContainer = <span {...labelTextAttrs} className={labelTextClasses} />;
   } else {
     labelTextContainer = <span {...labelTextAttrs} className={labelTextClasses}>{labelText}</span>;
+    controlInputAttrs['aria-label'] = labelText;
+    labelTextTopContainer = <span {...labelTextAttrs} className={labelTextTopClasses} />;
   }
 
   return (
     <div {...customProps} className={radioClasses}>
       <label htmlFor={id} className={labelClasses}>
+        {labelTextTopContainer}
         <input
           {...controlInputAttrs}
           type="radio"

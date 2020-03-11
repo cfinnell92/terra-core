@@ -45,6 +45,12 @@
       max-width: 100%; //stops content overflow on IE 10/11
     }
 
+    .label-text-top {
+      display: block;
+      max-width: 100%; //stops content overflow on IE 10/11
+      padding-top: var(--terra-form-radio-label-text-padding-top, 1rem);
+    }
+
     /* Custom radio shown when theme uses custom styling */
     .native-input + .outer-ring {
       background-color: var(--terra-form-radio-outer-ring-background-color, transparent);

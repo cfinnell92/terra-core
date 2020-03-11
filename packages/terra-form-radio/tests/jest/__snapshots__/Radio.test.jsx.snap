@@ -7,7 +7,11 @@ exports[`should render a ChoiceField with a radio 1`] = `
   <label
     className="label healtheintent-label-text"
   >
+    <span
+      className="label-text-top"
+    />
     <input
+      aria-label="Do you have any Children?"
       className="native-input healtheintent-application"
       disabled={false}
       name="children_present"
@@ -37,7 +41,11 @@ exports[`should render a controlled radio 1`] = `
   <label
     className="label"
   >
+    <span
+      className="label-text-top"
+    />
     <input
+      aria-label="Radio"
       checked={true}
       className="native-input"
       disabled={false}
@@ -68,7 +76,11 @@ exports[`should render a disabled radio 1`] = `
   <label
     className="label is-disabled"
   >
+    <span
+      className="label-text-top"
+    />
     <input
+      aria-label="Radio"
       checked={true}
       className="native-input"
       disabled={true}
@@ -99,7 +111,11 @@ exports[`should render a radio 1`] = `
   <label
     className="label"
   >
+    <span
+      className="label-text-top"
+    />
     <input
+      aria-label="Radio"
       className="native-input"
       disabled={false}
       name={null}
@@ -128,6 +144,44 @@ exports[`should render a radio with a hidden label 1`] = `
   <label
     className="label is-hidden"
   >
+    <span
+      className="label-text-top"
+    />
+    <input
+      aria-label="Radio"
+      checked={true}
+      className="native-input"
+      disabled={false}
+      name={null}
+      onChange={[Function]}
+      type="radio"
+    />
+    <span
+      className="outer-ring"
+    >
+      <span
+        className="inner-ring"
+      />
+    </span>
+    <span
+      className="label-text"
+    />
+  </label>
+</div>
+`;
+
+exports[`should render a radio with a label on top of the radio button 1`] = `
+<div
+  className="radio"
+>
+  <label
+    className="label"
+  >
+    <span
+      className="label-text-top"
+    >
+      Radio
+    </span>
     <input
       aria-label="Radio"
       checked={true}
@@ -158,7 +212,11 @@ exports[`should render an uncontrolled radio 1`] = `
   <label
     className="label"
   >
+    <span
+      className="label-text-top"
+    />
     <input
+      aria-label="Radio"
       className="native-input"
       defaultChecked={true}
       disabled={false}

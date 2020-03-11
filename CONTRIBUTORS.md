@@ -84,6 +84,7 @@ Cerner Corporation
 - Saket Bajaj [@saket2403]
 - Prachi Gotkhindikar [@prachigotkhindikar1]
 - Jeff Merten [@jeffmerten]
+- Cody Finnell[@cfinnell92]
 
 Community
 

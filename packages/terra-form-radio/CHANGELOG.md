@@ -3,6 +3,10 @@ ChangeLog
 
 Unreleased
 ----------
+3.40.0 - (March 11, 2020)
+------------------
+### Added
+* Added optional label on top of radio button functionality
 
 3.39.0 - (March 10, 2020)
 ------------------
